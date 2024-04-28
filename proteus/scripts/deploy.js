@@ -20,3 +20,5 @@ deploy().then();
 //      waiting for deployment
 //      deploy contract success, address: 0x7F25A4bbc48701a6D19a2c659bB25e9AE27b2167
 //      owner balance:1000000000000000000000
+
+//    npx hardhat verify 0x7F25A4bbc48701a6D19a2c659bB25e9AE27b2167 "Proteus" "XPA" 1000 --network sepolia

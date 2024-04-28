@@ -1,25 +1,20 @@
 const {ethers} = require("hardhat");
 
 async function run() {
-    const [owner, otherAccount] = await ethers.getSigners();
-    const contractAddress = "0xD13367A6Ac907a0cE6fd0e02026758775ca0f318";
+    const [owner, user] = await ethers.getSigners();
+    const contractAddress = "0x7F25A4bbc48701a6D19a2c659bB25e9AE27b2167";
+    const contractName = "Proteus";
 
     // 获取已部署的合约实例
-    console.log("waiting for get contract !");
-    const contract = await ethers.getContractAt("Hephaestus", contractAddress);
-    console.log("get contract success: ", contractAddress);
-
-    const ownerAddress = owner.address;
-    console.log("my address is: ", ownerAddress);
-
-    await contract.singleMint(ownerAddress, 2, "https://ipfs.io/ipfs/QmTurrmRKDMWrNt5jKuAxczEJThqtotWcd5VYMVorRPtCo");
-
-    const uri = await contract.tokenURI(2);
-    console.log("token uri is: ", uri);
+    console.log(`waiting for get contract ${contractName} contractAddress ${contractAddress}`);
+    const contract = await ethers.getContractAt(contractName, contractAddress);
+    console.log(`get contract success: ${contractAddress}`);
 }
 
 run().then();
 
 
-// 0x0000000000000000000000000000000000000000
-// 0x0eff64702a91C5799C3FfDB26d2E128f813cf4bB
+//   const contract = await Contract.deploy("Proteus", "XPA", 1000);
+//      waiting for deployment
+//      deploy contract success, address: 0x7F25A4bbc48701a6D19a2c659bB25e9AE27b2167
+//      owner balance:1000000000000000000000

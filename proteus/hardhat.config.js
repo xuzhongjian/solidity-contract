@@ -5,13 +5,13 @@ const MNEMONIC = process.env.MNEMONIC;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-    solidity: "0.8.24",
+    solidity: "0.8.4",
     networks: {
         sepolia: {
             url: "https://rpc.sepolia.org",
-            accounts: {
-                mnemonic: MNEMONIC
-            },
+            // accounts: {
+            mnemonic: MNEMONIC,
+            // },
             chainId: 11155111
         }
     },
